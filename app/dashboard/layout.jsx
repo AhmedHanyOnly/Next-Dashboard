@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import SidebarLayout from "@/components/layouts/Sidebar";
-import { Navbar } from "@/components/layouts/navbar";
+import { Navbar } from "@/components/layouts/Navbar";
 import AuthLoader from "@/components/AuthLoader";
 import ProtectedRoute from "@/middleware/ProtectedRoute";
 import { useAuthStore } from "@/store/useAuthStore";
