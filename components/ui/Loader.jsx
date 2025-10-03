@@ -3,7 +3,7 @@ import "react-loadly/styles.css";
 
 export const Loader = () => {
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="flex justify-center items-center h-full">
       <SpinLoader
         color="#ff8080"
         size={100}

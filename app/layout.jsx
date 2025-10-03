@@ -2,11 +2,11 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 // React Query
 
-
 // Sonner
 import { Toaster } from "sonner";
 import I18nProvider from "@/components/I18nProvider";
-import  QueryProvider  from "@/components/QueryProvider";
+import QueryProvider from "@/components/QueryProvider";
+import ProtectedRoute from "@/middleware/ProtectedRoute";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,7 +17,6 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
 
 export const metadata = {
   title: "Create Next App",
@@ -30,12 +29,14 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <I18nProvider>
-          <QueryProvider>
-          <Toaster position="top-right" richColors />
-          {children}
-          </QueryProvider>
-        </I18nProvider>
+        <ProtectedRoute>
+          <I18nProvider>
+            <QueryProvider>
+              <Toaster position="top-right" richColors />
+              {children}
+            </QueryProvider>
+          </I18nProvider>
+        </ProtectedRoute>
       </body>
     </html>
   );

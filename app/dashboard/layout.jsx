@@ -24,7 +24,6 @@ export default function DashboardLayout({ children }) {
 
   return (
     <AuthLoader>
-      <ProtectedRoute>
         <SidebarProvider>
           <div className="flex h-screen bg-gray-100">
             {/* Sidebar */}
@@ -57,7 +56,6 @@ export default function DashboardLayout({ children }) {
             </main>
           </div>
         </SidebarProvider>
-      </ProtectedRoute>
     </AuthLoader>
   );
 }
